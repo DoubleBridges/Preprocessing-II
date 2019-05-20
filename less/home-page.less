@@ -1,46 +1,80 @@
 .home {
 
+  @media @mobile {
+    width  : 100%;
+    padding: 0 20px;
+  }
+
   .content-section {
-    margin: 30px 0;
-    display: flex;
-    flex-wrap: wrap;
+    margin         : 30px 0;
+    display        : flex;
+    flex-wrap      : wrap;
     justify-content: space-between;
 
-   
-    
+    @media @tablet {
+      align-items: center;
+    }
+
+    @media @mobile {
+      flex-direction: column;
+      align-items   : center;
+    }
+
     .text-content {
-      width: 48%;
+      width        : 48%;
       padding-right: 1%;
+
+      @media @mobile {
+        width: 100%;
+      }
     }
 
     .img-content {
-      width: 48%;
+      width       : 48%;
       padding-left: 1%;
+
+      @media @mobile {
+        width: 100%;
+      }
 
       img {
         border-radius: 10px;
+
+        @media @mobile {
+          width: 100%;
+        }
       }
     }
   }
 
   .inverse-content {
     padding-bottom: 30px;
-    border-bottom: 2px dashed @navigation-border;
+    border-bottom : 2px dashed @navigation-border;
+
+    @media @mobile {
+      width         : 100%;
+      flex-direction: column-reverse;
+      align-items   : center;
+    }
 
     .text-content {
-      padding-left: 1%;
+      padding-left : 1%;
       padding-right: 0;
     }
 
     .img-content {
       padding-right: 1%;
-      padding-left: 0;
+      padding-left : 0;
     }
   }
 
   .content-destination {
-    width: 75%;
+    width : 75%;
     margin: 0 auto 30px;
+
+    @media @tablet {
+      width: 100%;
+    }
 
     img {
       border-radius: 10px;
@@ -48,14 +82,34 @@
   }
 
   .content-pick {
-    padding-top: 30px;
-    border-top: 2px dashed @navigation-border;
-    display: flex;
+    padding-top    : 30px;
+    border-top     : 2px dashed @navigation-border;
+    display        : flex;
     justify-content: space-between;
 
     .destination {
-      width: 30%;
+      width        : 30%;
       margin-bottom: 30px;
+
+      .btn {
+        .btn-style();
+      }
+
+      .btn:hover {
+        .btn-hover();
+
+      }
+    }
+
+    @media @tablet {
+      flex-direction: column;
+      align-items   : center;
+
+      .destination {
+        width: 70%;
+      }
     }
   }
-}// home
+}
+
+// home
